@@ -1,6 +1,6 @@
 package com.github.jairrab.numberlib.lib
 
-import com.jairrab.github.currencysymbols.CurrencySymbols
+import com.github.jairrab.currencysymbols.CurrencySymbols
 import com.github.jairrab.numberlib.NumberUtility
 import com.github.jairrab.numberlib.lib.formatter.NumberFormatterUtility
 import com.github.jairrab.numberlib.lib.params.NumberModel

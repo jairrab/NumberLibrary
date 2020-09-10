@@ -1,6 +1,6 @@
 package com.github.jairrab.numberlib
 
-import com.jairrab.github.currencysymbols.CurrencySymbols
+import com.github.jairrab.currencysymbols.CurrencySymbols
 import com.github.jairrab.numberlib.lib.NumberUtilityLibrary
 import com.github.jairrab.numberlib.lib.formatter.NumberFormatterUtility
 import java.util.*
