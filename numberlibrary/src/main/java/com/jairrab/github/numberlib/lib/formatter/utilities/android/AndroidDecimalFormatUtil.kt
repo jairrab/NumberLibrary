@@ -1,4 +1,4 @@
-package com.jairrab.numberlib.lib.formatter.utilities.android
+package com.jairrab.github.numberlib.lib.formatter.utilities.android
 
 import android.icu.text.DecimalFormat
 import android.icu.text.NumberFormat

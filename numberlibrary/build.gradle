@@ -4,8 +4,8 @@ plugins {
     id 'com.github.dcendents.android-maven'
 }
 
-group = 'com.github.jairrab'
-version = '1.1.0'
+group = 'com.github.jairrab.numberlibrary'
+version = '1.2.0'
 
 android {
     compileSdkVersion 29
@@ -52,5 +52,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'com.github.jairrab:CurrencySymbols:1.0.0'
+    implementation 'com.github.jairrab:CurrencySymbols:1.1.0'
 }

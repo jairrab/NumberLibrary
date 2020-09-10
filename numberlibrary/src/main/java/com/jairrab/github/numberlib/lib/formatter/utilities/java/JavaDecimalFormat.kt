@@ -1,7 +1,7 @@
-package com.jairrab.numberlib.lib.formatter.utilities.java
+package com.jairrab.github.numberlib.lib.formatter.utilities.java
 
-import com.jairrab.numberlib.lib.params.NumberModel
-import com.jairrab.numberlib.lib.formatter.NumberFormatter
+import com.jairrab.github.numberlib.lib.params.NumberModel
+import com.jairrab.github.numberlib.lib.formatter.NumberFormatter
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 

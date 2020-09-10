@@ -1,11 +1,11 @@
-package com.jairrab.numberlib.lib.formatter.utilities.android
+package com.jairrab.github.numberlib.lib.formatter.utilities.android
 
 import android.icu.text.DecimalFormat
 import android.icu.text.DecimalFormatSymbols
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.jairrab.numberlib.lib.formatter.NumberFormatter
-import com.jairrab.numberlib.lib.params.NumberModel
+import com.jairrab.github.numberlib.lib.formatter.NumberFormatter
+import com.jairrab.github.numberlib.lib.params.NumberModel
 import kotlin.math.abs
 
 internal class AndroidDecimalFormat(
