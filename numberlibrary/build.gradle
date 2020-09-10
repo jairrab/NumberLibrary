@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.jairrab'
-version = '1.0.1'
+version = '1.1.0'
 
 android {
     compileSdkVersion 29
@@ -20,6 +20,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
+	
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 
     buildTypes {
         release {
@@ -27,10 +31,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+	
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+	
     kotlinOptions {
         jvmTarget = '1.8'
     }
