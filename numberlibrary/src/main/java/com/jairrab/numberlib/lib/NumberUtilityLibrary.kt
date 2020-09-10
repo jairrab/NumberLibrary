@@ -1,7 +1,7 @@
 package com.jairrab.numberlib.lib
 
+import com.jairrab.github.currencysymbols.CurrencySymbols
 import com.jairrab.numberlib.NumberUtility
-import com.jairrab.numberlib.lib.currency.CurrencySymbolUtil
 import com.jairrab.numberlib.lib.formatter.NumberFormatterUtility
 import com.jairrab.numberlib.lib.params.NumberModel
 import java.util.*
@@ -9,7 +9,6 @@ import java.util.*
 internal class NumberUtilityLibrary(
     override val maximumNumber: Double,
     private val numberFormatterUtility: NumberFormatterUtility,
-    private val currencySymbolUtil: CurrencySymbolUtil,
     override var locale: Locale = Locale.getDefault(),
     override var currencyVisibility: Boolean,
     override var decimalPlaces: Int,
@@ -23,7 +22,7 @@ internal class NumberUtilityLibrary(
 
     override fun updateCurrency(currency: String) {
         this.currency = currency
-        currencySymbol = currencySymbolUtil.get(currency)
+        currencySymbol = CurrencySymbols.get(currency)
     }
 
     override fun getDefault(number: Double): String {
@@ -161,7 +160,7 @@ internal class NumberUtilityLibrary(
     }
 
     override fun getCurrencySymbol(currency: String): String {
-        return currencySymbolUtil.get(currency)
+        return CurrencySymbols.get(currency)
     }
 
     private fun getNumber(number: Double) = if (number > maximumNumber) maximumNumber else number

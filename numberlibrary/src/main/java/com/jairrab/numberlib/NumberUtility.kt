@@ -1,8 +1,7 @@
 package com.jairrab.numberlib
 
+import com.jairrab.github.currencysymbols.CurrencySymbols
 import com.jairrab.numberlib.lib.NumberUtilityLibrary
-import com.jairrab.numberlib.lib.currency.CurrencySymbolRepo
-import com.jairrab.numberlib.lib.currency.CurrencySymbolUtil
 import com.jairrab.numberlib.lib.formatter.NumberFormatterUtility
 import java.util.*
 
@@ -45,16 +44,14 @@ interface NumberUtility {
             negativePrefix: String = "-",
             negativeSuffix: String = "",
         ): NumberUtility {
-            val currencySymbolUtil = CurrencySymbolUtil(CurrencySymbolRepo())
             return NumberUtilityLibrary(
                 maximumNumber = maximumNumber,
                 numberFormatterUtility = NumberFormatterUtility.getInstance(),
-                currencySymbolUtil = currencySymbolUtil,
                 locale = locale,
-                currency = currency,
-                currencySymbol = currencySymbolUtil.get(currency),
                 currencyVisibility = currencyVisibility,
                 decimalPlaces = decimalPlaces,
+                currency = currency,
+                currencySymbol = CurrencySymbols.get(currency),
                 decimalSeparator = decimalSeparator,
                 groupingSeparator = groupingSeparator,
                 negativePrefix = negativePrefix,
