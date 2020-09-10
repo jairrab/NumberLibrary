@@ -1,4 +1,4 @@
-package com.jairrab.github.numberlib.lib.formatter.utilities.java
+package com.github.jairrab.numberlib.lib.formatter.utilities.java
 
 import java.text.DecimalFormat
 import java.text.NumberFormat

@@ -1,9 +1,9 @@
-package com.jairrab.github.numberlib.lib
+package com.github.jairrab.numberlib.lib
 
 import com.jairrab.github.currencysymbols.CurrencySymbols
-import com.jairrab.github.numberlib.NumberUtility
-import com.jairrab.github.numberlib.lib.formatter.NumberFormatterUtility
-import com.jairrab.github.numberlib.lib.params.NumberModel
+import com.github.jairrab.numberlib.NumberUtility
+import com.github.jairrab.numberlib.lib.formatter.NumberFormatterUtility
+import com.github.jairrab.numberlib.lib.params.NumberModel
 import java.util.*
 
 internal class NumberUtilityLibrary(

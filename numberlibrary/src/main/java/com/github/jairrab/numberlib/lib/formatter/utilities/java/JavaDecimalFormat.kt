@@ -1,54 +1,45 @@
-package com.jairrab.github.numberlib.lib.formatter.utilities.android
+package com.github.jairrab.numberlib.lib.formatter.utilities.java
 
-import android.icu.text.DecimalFormat
-import android.icu.text.DecimalFormatSymbols
-import android.os.Build
-import androidx.annotation.RequiresApi
-import com.jairrab.github.numberlib.lib.formatter.NumberFormatter
-import com.jairrab.github.numberlib.lib.params.NumberModel
-import kotlin.math.abs
+import com.github.jairrab.numberlib.lib.params.NumberModel
+import com.github.jairrab.numberlib.lib.formatter.NumberFormatter
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 
-internal class AndroidDecimalFormat(
-    private val decimalFormatUtil: AndroidDecimalFormatUtil
+internal class JavaDecimalFormat(
+    private val decimalFormatUtil: JavaDecimalFormatUtil
 ) : NumberFormatter() {
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
     override fun format(model: NumberModel, number: Double): String {
         val format: DecimalFormat
 
         when {
             model.showCurrency -> {
-                format = decimalFormatUtil.getCurrencyInstance(model.locale)
+                format = decimalFormatUtil.getCurrencyInstanceJava(model.locale)
 
                 val symbols = DecimalFormatSymbols(model.locale)
                 symbols.currencySymbol = model.currencySymbol
 
-                if (model.decimalSeparator.toInt() != 0) {
+                if (model.decimalSeparator.toInt() != 0)
                     symbols.monetaryDecimalSeparator = model.decimalSeparator
-                }
 
-                if (model.groupingSeparator.toInt() != 0) {
-                    symbols.monetaryGroupingSeparator = model.groupingSeparator
-                }
+                if (model.groupingSeparator.toInt() != 0)
+                    symbols.groupingSeparator = model.groupingSeparator
 
                 format.decimalFormatSymbols = symbols
             }
             model.isFormatAsPercentage -> {
-                format = decimalFormatUtil.getPercentInstance(model.locale)
+                format = decimalFormatUtil.getPercentInstanceJava(model.locale)
                 format.applyPattern(getPercentagePattern(model.percentDecimalPlace))
             }
             else -> {
-                format = decimalFormatUtil.getNumberInstance(model.locale)
+                format = decimalFormatUtil.getNumberInstanceJava(model.locale)
 
                 val symbols = DecimalFormatSymbols(model.locale)
 
-                if (model.decimalSeparator.toInt() != 0) {
+                if (model.decimalSeparator.toInt() != 0)
                     symbols.decimalSeparator = model.decimalSeparator
-                }
 
-                if (model.groupingSeparator.toInt() != 0) {
+                if (model.groupingSeparator.toInt() != 0)
                     symbols.groupingSeparator = model.groupingSeparator
-                }
 
                 format.decimalFormatSymbols = symbols
             }
@@ -56,19 +47,15 @@ internal class AndroidDecimalFormat(
 
         format.isGroupingUsed = model.isGroupingUsed
 
-        if (model.minDigits != -1) {
-            format.minimumFractionDigits = model.minDigits
-        }
+        if (model.minDigits != -1) format.minimumFractionDigits = model.minDigits
 
-        if (model.maxDigits != -1) {
-            format.maximumFractionDigits = model.maxDigits
-        }
+        if (model.maxDigits != -1) format.maximumFractionDigits = model.maxDigits
 
         return if (number < 0 && model.negativePrefix == "(") {
             String.format(
                 "%s%s%s",
                 model.negativePrefix,
-                format.format(abs(number)),
+                format.format(number),
                 model.negativeSuffix
             )
         } else {
@@ -88,4 +75,3 @@ internal class AndroidDecimalFormat(
         return s.append("%").toString()
     }
 }
-

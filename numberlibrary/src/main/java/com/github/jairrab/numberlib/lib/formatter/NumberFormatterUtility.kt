@@ -1,11 +1,11 @@
-package com.jairrab.github.numberlib.lib.formatter
+package com.github.jairrab.numberlib.lib.formatter
 
 import android.os.Build
-import com.jairrab.github.numberlib.lib.formatter.utilities.android.AndroidDecimalFormat
-import com.jairrab.github.numberlib.lib.formatter.utilities.android.AndroidDecimalFormatUtil
-import com.jairrab.github.numberlib.lib.formatter.utilities.java.JavaDecimalFormat
-import com.jairrab.github.numberlib.lib.formatter.utilities.java.JavaDecimalFormatUtil
-import com.jairrab.github.numberlib.lib.params.NumberModel
+import com.github.jairrab.numberlib.lib.formatter.utilities.android.AndroidDecimalFormat
+import com.github.jairrab.numberlib.lib.formatter.utilities.android.AndroidDecimalFormatUtil
+import com.github.jairrab.numberlib.lib.formatter.utilities.java.JavaDecimalFormat
+import com.github.jairrab.numberlib.lib.formatter.utilities.java.JavaDecimalFormatUtil
+import com.github.jairrab.numberlib.lib.params.NumberModel
 
 internal class NumberFormatterUtility private constructor(
     private val numberFormatter: NumberFormatter

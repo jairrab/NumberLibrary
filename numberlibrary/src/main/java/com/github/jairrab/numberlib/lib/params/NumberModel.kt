@@ -1,4 +1,4 @@
-package com.jairrab.github.numberlib.lib.params
+package com.github.jairrab.numberlib.lib.params
 
 import java.util.*
 
